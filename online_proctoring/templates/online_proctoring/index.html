@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Table Example</title>
+    <style>
+        /* Center align the content */
+        body {
+            text-align: center;
+        }
+
+        /* Style for the table */
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        /* Style for table cells */
+        td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        /* Style for left buttons */
+        .button.left {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: rgb(120, 150, 200); /* Left button background color */
+            color: #FFFFFF; /* White font color */
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Style for right buttons */
+        .button.right {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: rgb(45, 149, 186); /* Right button background color */
+            color: #FFFFFF; /* White font color */
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Style for the "Stop Running Process" button */
+        .button.stop {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #DC3545; /* Red background color */
+            color: #FFFFFF; /* White font color */
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Style for the image */
+        #logo {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Image at the top -->
+    <img id="logo" src="static/expertz.png" alt="Expertz Logo">
+
+    <!-- Table for buttons -->
+    <table>
+        <tr>
+            <!-- Left-side buttons -->
+            <td>
+                <button class="button left">
+                    <a href="{% url 'ai_proctoring' %}">Start AI Proctoring</a>
+                </button>
+                <button class="button left">
+                    <a href="{% url 'detect_object_y5' %}">Object Tracking</a>
+                </button>
+                <button class="button left"> 
+                    <a href="{% url 'detect_noise' %}">Noise Tracking</a>
+                </button>
+                <button class="button left">
+                    Head and Eye Tracking
+                </button>
+                <button class="button left">
+                    <a href="{% url 'head_and_eye' %}">Head and Eye Tracking
+                </button>
+                <button class="button left">
+                    <a href="{% url 'detect_windows' %}">Windows Switching Tracking</a>
+                </button>
+                <button class="button left">
+                    <a href="{% url 'yolov8_object_tracking' %}">Object Tracking Using YoloV8</a>
+                </button>
+\
+                
+            </td>
+
+            <!-- Right-side buttons -->
+            <td>
+                <button class="button right">
+                    <a href="{% url 'object_tracked' %}" target="_blank">Show Objects Tracked</a>
+                </button>
+                <button class="button right">
+                    <a href="{% url 'noise_tracking' %}" target="_blank">Show Noise Classification</a>                        
+                </button>
+                <button class="button right">
+                    <a href="{% url 'noise_plot' %}" target="_blank">Plot of last Noise classification</a>                        
+                </button>
+                <button class="button right">Show Head and Eye Tracking</button>
+
+                <button class="button right">
+                    <a href="{% url 'windows_tracking' %}" target="_blank">Show Windows Tracking</a>                   
+                </button>
+                <button class="button right">
+                    <a href="{% url 'yolov8_tracking' %}" target="_blank">Show Yolov8 Tracking</a>
+                </button>
+                
+            </td>
+        </tr>
+        <tr>
+            <!-- Centered "Stop Running Process" button -->
+            <td colspan="2">
+                <button class="button stop">
+                    <a href="{%url 'stop_process' %}" target="_blank">Stop Running Process</a>
+                </button> 
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
