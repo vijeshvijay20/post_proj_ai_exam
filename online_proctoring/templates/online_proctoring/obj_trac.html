@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Tracking Using Yolov5</title>
+    <style>
+        /* Style for the image */
+        #logo {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="top-buttons">
+        <button class="button" onclick="window.open('{% url 'stop_process'%}')">Stop Running Process</button>
+        <!-- Add more buttons as needed -->
+    </div>
+    <!-- Image at the top -->
+    <img id="logo" src="{% static 'expertz.png' %}" alt="Expertz Logo">
+    <!-- Rest of your template -->
+</body>
+
+<body>
+    <h1>Objects are tracking .....</h1>
+<body>
+
+    <body>
+        <!-- Image at the top -->
+        <img id="logo" src="{% static 'object.gif' %}" alt="Object Tracking">
+        <!-- Rest of your template -->
+    </body>

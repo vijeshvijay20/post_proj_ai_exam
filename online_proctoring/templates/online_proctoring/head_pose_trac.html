@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Head Nose Position Tracked</title>
+    <style>
+        /* Style for the image */
+        #logo {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        /* Style for the button */
+        #top-buttons {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Button to go to Index -->
+    <div id="top-buttons">
+        <button class="button" onclick="window.location.href='http://127.0.0.1:8000/'">Go to Index</button>
+    </div>
+
+    <!-- Image at the top -->
+    <img id="logo" src="{% static 'expertz.png' %}" alt="Expertz Logo">
+
+    <!-- Table for data display -->
+    <table>
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Detection</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for timestamp, detection in data.items %}
+                <tr>
+                    <td>{{ timestamp }}</td>
+                    <td>{{ detection }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        // Log the JSON data to the console (you can send it to your backend or use it as needed)
+        console.log(JSON.stringify({{ data|safe }}, null, 4));
+    </script>
+</body>
+</html>

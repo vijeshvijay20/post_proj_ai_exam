@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Noise Tracking Using Yamnet</title>
+    <style>
+        /* Style for the image */
+        #logo {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+        }
+        /* Style for the button */
+        #button-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Go to Index button in the left top corner -->
+    <div id="top-buttons">
+        <button class="button" onclick="window.open('{% url 'stop_process'%}')">Stop Running Process</button>
+        <!-- Add more buttons as needed -->
+    </div>
+
+    <!-- Image at the top -->
+    <img id="logo" src="{% static 'expertz.png' %}" alt="Expertz Logo">
+
+    <!-- Content of the template -->
+    <h1>Tracking Noise.....</h1>
+    
+    <!-- Another Image -->
+    <img id="logo" src="{% static 'voice.gif' %}" alt="Recording">
+</body>
+</html>
